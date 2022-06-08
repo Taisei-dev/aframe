@@ -16,6 +16,8 @@
         <a-entity id="maze" position="0 0 0">
         </a-entity>
         <a-plane position="22 0 22" rotation="-90 0 0" width="50" height="50" color="#7BC8A4"></a-plane>
+        <a-text position="-2 0 2" rotation="-90 -90 0" value="Start" color="red" width="18"></a-text>
+        <a-text position="14 0 8" rotation="-90 -90 0" value="Goal" color="blue" width="18"></a-text>
         <a-sky color="#ECECEC"></a-sky>
     </a-scene>
     <script>
@@ -24,9 +26,7 @@
                         ['@',' ','@',' ','@'],
                         ['@',' ','@',' ',' '],
                         ['@','@','@','@','@']];
-
         let mazeelement=document.getElementById('maze');
-
         for(let i=0;i<mazedata.length;i++){
             for(let j=0;j<mazedata[0].length;j++){
                 if(mazedata[i][j]=='@'){
@@ -35,8 +35,7 @@
                     blockelement.setAttribute('width','3');
                     blockelement.setAttribute('height','3');
                     blockelement.setAttribute('depth','3');
-                    blockelement.setAttribute('color','#FFC65D');
-                    
+                    blockelement.setAttribute('color','#FFC65D');    
                     mazeelement.appendChild(blockelement);
                 }
             }
